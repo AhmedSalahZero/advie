@@ -1,0 +1,169 @@
+/* =================================
+Preloader
+===================================*/
+.spinner {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 99;
+    position: fixed;
+    background: #000;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.bouncer {
+    position: relative;
+}
+.bouncer,
+.bouncer:before,
+.bouncer:after {
+    width: 18px;
+    height: 18px;
+    background-color: #5659fe;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: prebounce 1.4s infinite ease-in-out both;
+    animation: prebounce 1.4s infinite ease-in-out both;
+}
+.bouncer:before,
+.bouncer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+}
+.bouncer:before {
+    left: -30px;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.bouncer:after {
+    right: -30px;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+@-webkit-keyframes prebounce {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+@keyframes prebounce {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+
+/* =================================
+Button
+===================================*/
+.main-btn {
+    padding: 8px 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    color: #fff;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.main-btn:hover,
+.main-btn:active,
+.main-btn:focus {
+    z-index: 3;
+    background: #ffffff;
+}
+.main-btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.main-btn:hover:after,
+.main-btn:focus:after,
+.main-btn:active:after {
+    height: 100%;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+
+/* =================================
+Button Another Style
+===================================*/
+.main-btn.main-btn2 {
+    color: #ffffff;
+}
+.main-btn.main-btn2:hover,
+.main-btn.main-btn2:active,
+.main-btn.main-btn2:focus {
+    background: #ffffff;
+}
+
+
+/* ==========================================================================
+Carousel dots style
+========================================================================== */
+.section .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+.section .owl-carousel button.owl-dot {
+    background: #bbb;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #e1e1e1;
+}
+.section .owl-carousel button.owl-dot.active {
+    width: 30px;
+}
+section.section-banner .owl-dots {
+    bottom: 110px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+section.section-banner .owl-carousel button.owl-dot {
+    margin: 0 5px;
+    background: rgba(255, 255, 255, 0.5);
+}
+section.section-banner .owl-carousel button.owl-dot.active {
+    background: rgba(255, 255, 255, 0.8);
+}
